@@ -1,0 +1,23 @@
+%% Load functions
+
+addpath functions
+
+%% Part a
+
+% clear
+clear
+clc
+
+% Euler (3-2-1) attitude at t=0
+theta1 = -pi/4; % [rad]
+theta2 = pi/8; % [rad]
+theta3 = pi/5; % [rad]
+
+% DCM attitude at t=0
+C = EA321toDCM(theta1,theta2,theta3); % [-]
+
+% Euler Parameter attitude at t=0
+epsilon = DCMtoEP(C); % [-]
+
+% Confirm unit-norm
+disp(norm())
